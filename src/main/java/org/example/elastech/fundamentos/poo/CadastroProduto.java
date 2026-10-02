@@ -14,8 +14,6 @@ public class CadastroProduto {
             novoProduto.nome = scanner.nextLine();
             System.out.println("Qual o preço do produto? Digite:");
             novoProduto.preco = scanner.nextDouble();
-            scanner.nextLine();
-
 
             if (novoProduto.preco > 100){
                 System.out.printf("O produto %s custa R$%.2f. Produto caro!%n", novoProduto.nome, novoProduto.preco);

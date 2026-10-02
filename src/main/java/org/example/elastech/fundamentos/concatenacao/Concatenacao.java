@@ -9,7 +9,7 @@ public class Concatenacao {
         String cidade = "Salvador";
         int idade = 28;
 
-        System.out.println("Meu nome é " + nome + " moro em " + cidade + " e tenho " + idade + " anos.");
+        System.out.println("Meu nome é " + nome + ", moro em " + cidade + " e tenho " + idade + " anos.");
 
         /*2 — Crie variáveis para o nome de um produto ("Caneca"), o preço (12.50) e a quantidade (4).
          Mostre: "Comprei 4 unidades de Caneca por R$ 12.5 cada. Total: R$ 50.0"
@@ -33,39 +33,11 @@ public class Concatenacao {
          Explique em um comentário por que deram resultados diferentes.
          */
         System.out.println("2 + 2 = " + 2 + 2);
-        //Aqui ele fez a concatenação como um texto e não a soma dos valores.
-
+        // O + é usado para concatenação porque a expressão já contém uma String.
+        // Por isso, os números são concatenados ao texto em vez de serem somados.
         System.out.println("2 + 2 = " + (2 + 2));
-        //Aqui como os valores estão entre parenteses a soma dos números é feita antes da concatenação sem transformar os números em "texto".
+        //Aqui como os valores estão entre parenteses a soma dos números é feita antes da concatenação.
 
-        //1- Crie variáveis para dois números inteiros de valor a = 10 e b = 3 e mostre na tela: soma, subtração, multiplicação, divisão e resto.
-        int numeroA = 10;
-        int numeroB = 3;
-
-        System.out.println("Inteiros");
-        System.out.println("Soma: " + (numeroA + numeroB));
-        System.out.println("Subtração: " + (numeroA - numeroB));
-        System.out.println("Multiplicação: " + (numeroA * numeroB));
-        System.out.println("Divisão: " + (numeroA / numeroB));
-        System.out.println("Resto: " + (numeroA % numeroB));
-
-        //2- Crie variáveis para dois números decimais de valor a = 10 e b = 3 e mostre na tela: soma, subtração, multiplicação, divisão e resto.
-        double numeroI = 10;
-        double numeroII = 3;
-
-        System.out.println("Decimais");
-        System.out.println("Soma: " + (numeroI + numeroII));
-        System.out.println("Subtração: " + (numeroI - numeroII));
-        System.out.println("Multiplicação: " + (numeroI * numeroII));
-        System.out.println("Divisão: " + (numeroI / numeroII));
-        System.out.println("Resto: " + (numeroI % numeroII));
-
-        //3- Crie variáveis para três notas (8, 6 e 10). Mostre a soma e a média.
-        int nota1 = 8;
-        int nota2 = 6;
-        int nota3 = 10;
-
-        System.out.println("A soma das notas é: " + (nota1 + nota2 + nota3) + " e a média das notas é: " + (nota1 + nota2 + nota3) / 3);
 
         //4- Faça a operação a + b * c, sendo a = 3, b = 4 e c = 5.
         int a = 3;

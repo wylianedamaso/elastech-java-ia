@@ -3,16 +3,16 @@ package org.example.elastech.fundamentos.variaveis;
 public class Variaveis {
     public static void main(String[] args) {
         //Crie variáveis:
-        String nome = "Wyliane";
+        String nome = "Ana";
         int idade = 27;
         double altura = 1.70;
-        String cep = "07955-000";
+        String cep = "00000-000";
         boolean ehFumante = false;
-        String cidadeOndeMora = "Franco da Rocha";
+        String cidadeOndeMora = "São Paulo";
         double peso = 92.100;
-        String telefone = "(11)93210-9876";
+        String telefone = "(11)99999-9999";
         boolean temCarteiraDeMotorista = false;
-        String profissao = "Desenvolvedora Java";
+        String profissao = "Estudante";
         int anoNascimento = 1999;
         double temperatura = 21.0;
         double nota = 9.8;
@@ -31,6 +31,8 @@ public class Variaveis {
         System.out.println(anoNascimento);
         System.out.println(temperatura);
         System.out.println(nota);
+
+
 
 
     }

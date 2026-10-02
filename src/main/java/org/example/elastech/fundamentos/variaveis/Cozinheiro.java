@@ -5,7 +5,7 @@ public class Cozinheiro {
     String nome;
     String especialidade;
     String telefone;
-    boolean ehMastercheff = true;
+    boolean ehMasterChef = true;
     int idade = 28;
 
 }

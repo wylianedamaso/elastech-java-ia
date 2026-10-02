@@ -21,7 +21,7 @@ Exemplo de saída: "O lanche Xis-Bacon custa R$ 28.50 \n"
         valorDoLanche = scanner.nextDouble();
 
         if (valorDoLanche > 30.00){
-            System.out.printf("O lanche %s com desconto custará R$ %.2f.%n" , lanche, (valorDoLanche -5));
+            System.out.printf("O lanche %s com desconto custará R$ %.2f.%n" , lanche, (valorDoLanche -5.00));
         }else {
             System.out.printf("O lanche %s custará R$ %.2f.%n" , lanche, valorDoLanche);
 

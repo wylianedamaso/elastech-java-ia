@@ -1,6 +1,6 @@
-package org.example.elastech.fundamentos.poo.classes;
+package org.example.elastech.fundamentos.classes;
 
-public class Classes {
+public class TestandoClasses {
     public static void main(String[] args) {
 
         Animal animal = new Animal();
@@ -17,6 +17,7 @@ public class Classes {
         carro.modelo = "SUV";
         carro.quantidadePortas = 4;
         carro.quantidadeRodas = 4;
+
 
 
 

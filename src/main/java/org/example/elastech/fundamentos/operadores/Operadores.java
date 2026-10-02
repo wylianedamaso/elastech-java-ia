@@ -42,5 +42,35 @@ public class Operadores {
         boolean chovendo = true;
 
         System.out.println(!chovendo);
+
+        //5- Crie variáveis para dois números inteiros de valor a = 10 e b = 3 e mostre na tela: soma, subtração, multiplicação, divisão e resto.
+        int numeroA = 10;
+        int numeroB = 3;
+
+        System.out.println("Inteiros");
+        System.out.println("Soma: " + (numeroA + numeroB));
+        System.out.println("Subtração: " + (numeroA - numeroB));
+        System.out.println("Multiplicação: " + (numeroA * numeroB));
+        System.out.println("Divisão: " + (numeroA / numeroB));
+        System.out.println("Resto: " + (numeroA % numeroB));
+
+        //6- Crie variáveis para dois números decimais de valor a = 10 e b = 3 e mostre na tela: soma, subtração, multiplicação, divisão e resto.
+        double numeroI = 10;
+        double numeroII = 3;
+
+        System.out.println("Decimais");
+        System.out.println("Soma: " + (numeroI + numeroII));
+        System.out.println("Subtração: " + (numeroI - numeroII));
+        System.out.println("Multiplicação: " + (numeroI * numeroII));
+        System.out.println("Divisão: " + (numeroI / numeroII));
+        System.out.println("Resto: " + (numeroI % numeroII));
+
+        //7- Crie variáveis para três notas (8, 6 e 10). Mostre a soma e a média.
+        int nota1 = 8;
+        int nota2 = 6;
+        int nota3 = 10;
+
+        System.out.println("A soma das notas é: " + (nota1 + nota2 + nota3) + " e a média das notas é: " + (nota1 + nota2 + nota3) / 3);
+
     }
 }

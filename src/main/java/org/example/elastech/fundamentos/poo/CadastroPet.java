@@ -12,7 +12,6 @@ public class CadastroPet {
 
         System.out.println("Minha gata se chama " + gato.nome +  " sua raça é " + gato.raca + " e ela pesa " + gato.peso + " kg.");
 
-
         Pet cachorro = new Pet();
 
         cachorro.nome = "Snow";

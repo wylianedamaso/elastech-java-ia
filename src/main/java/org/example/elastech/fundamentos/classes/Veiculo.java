@@ -1,4 +1,4 @@
-package org.example.elastech.fundamentos.poo.classes;
+package org.example.elastech.fundamentos.classes;
 
 public class Veiculo {
 
