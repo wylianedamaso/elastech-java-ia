@@ -1,4 +1,4 @@
-package org.example.elastech.fundamentos.classes;
+package org.example.elastech.fundamentos.poo.classesobjetos;
 
 public class TestandoClasses {
     public static void main(String[] args) {
