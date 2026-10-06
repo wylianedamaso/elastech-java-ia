@@ -27,10 +27,10 @@ public class EstruturaRepeticao {
 
 
 
-//        do {
-//            System.out.println("Digite a sua senha: ");
-//            senha = scanner.nextInt();
-//        }while (senha != 1234);
+        do {
+            System.out.println("Digite a sua senha: ");
+            senha = scanner.nextInt();
+        }while (senha != 1234);
 
     }
 }
