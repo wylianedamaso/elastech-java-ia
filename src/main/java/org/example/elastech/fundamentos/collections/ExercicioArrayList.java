@@ -19,14 +19,14 @@ public class ExercicioArrayList {
 
 Referência:
 
-nomes.add("Carla");          // adiciona no fim
-nomes.get(0);                // pega pela posição
-nomes.size();                // quantos tem
-nomes.set(0, "Zoe");         // troca o valor da posição
-nomes.remove(1);             // remove pela posição
-nomes.contains("Ana");       // true ou false
-nomes.indexOf("Bia");        // em que posição está
-nomes.isEmpty();             // true se está vazia
+nomes.add("Carla"); adiciona no fim
+nomes.get(0); pega pela posição
+nomes.size(); mostra quantos têm
+nomes.set(0, "Zoe"); troca o valor da posição
+nomes.remove(1); remove pela posição
+nomes.contains("Ana"); true ou false
+nomes.indexOf("Bia"); em que posição está
+nomes.isEmpty(); true se está vazia
      */
     public static void main(String[] args) {
 
