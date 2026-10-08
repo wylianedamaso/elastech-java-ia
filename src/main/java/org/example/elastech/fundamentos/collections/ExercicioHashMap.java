@@ -2,6 +2,7 @@ package org.example.elastech.fundamentos.collections;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class ExercicioHashMap {
     public static void main(String[] args) {
@@ -72,5 +73,14 @@ public class ExercicioHashMap {
         notasAlunas.remove("Fernanda");
         System.out.println(notasAlunas);
         System.out.println(notasAlunas.size());
+
+
+        //Exemplo
+        HashMap<String, String> mapa = new  HashMap<>(Map.of("Maria", "maria@gmail.com", "Ana", "ana@gmail.com"));
+
+        Scanner sc = new Scanner(System.in);
+        String nome = sc.nextLine();
+
+        System.out.println(mapa.getOrDefault(nome, "Nome não encontrado."));
     }
 }
