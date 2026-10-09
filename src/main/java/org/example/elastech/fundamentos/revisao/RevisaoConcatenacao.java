@@ -11,8 +11,8 @@ Crie uma variável com o preço de um produto e imprima com duas casas decimais.
 
 Usando printf, imprima numa linha só o nome, a idade e a altura.
 
-🔥 Mini-desafio — Crie variáveis para três produtos (nome e preço) e imprima um recibo. Cada linha deve ter o nome e o preço, e a última linha mostra o total, tudo com duas casas decimais.
+Mini-desafio — Crie variáveis para três produtos (nome e preço) e imprima um recibo. Cada linha deve ter o nome e o preço, e a última linha mostra o total, tudo com duas casas decimais.
 
-💡 Crie uma variável total começando em zero, antes dos produtos, e vá somando cada preço nela.
+Crie uma variável total começando em zero, antes dos produtos, e vá somando cada preço nela.
      */
 }
