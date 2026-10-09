@@ -62,6 +62,5 @@ ArrayList<String> lista = new ArrayList<>();
 
         String[] outrosNomes = {"Samuel", "Saulo", "Davi", "João", "Anderson" };
 
-        for ()
     }
 }
