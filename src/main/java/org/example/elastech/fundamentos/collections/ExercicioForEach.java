@@ -32,21 +32,21 @@ ArrayList:
 ArrayList<String> lista = new ArrayList<>();
      */
     public static void main(String[] args) {
-
+        //Exercício 1
         String[] nomes = {"Fátima", "Juliana", "Cália", "Sara"};
 
         for (String nome : nomes){
             System.out.println(nome);
         }
 
-
+        //Exercício 2
         ArrayList<Double> notas = new ArrayList<>(List.of(8.5, 7.0, 6.9, 8.0, 9.4));
 
         for (Double nota : notas){
             System.out.println(nota);
         }
 
-
+        //Exercício 3
         int[] outrasNotas = {8, 6, 10, 7};
         int soma = 0;
 
@@ -60,8 +60,24 @@ ArrayList<String> lista = new ArrayList<>();
         System.out.println("Soma: " + soma);
         System.out.println("Média: " + media);
 
+        //Exercício 4
         String[] outrosNomes = {"Samuel", "Saulo", "Davi", "João", "Anderson" };
+        int contador = 0;
+        for (String outroNome : outrosNomes){
 
-        for ()
+            if (outroNome.length() > 5){
+                contador++;
+                System.out.println(outroNome);
+            }
+
+        }
+        System.out.println("Quantidade de nomes com mais de 5 letras: " + contador);
+
+        //Exercício 5
+        for (int i = 0; i < nomes.length ; i++){
+            System.out.println(nomes[i]);
+
+        }
+
     }
 }

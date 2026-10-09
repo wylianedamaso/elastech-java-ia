@@ -1,5 +1,7 @@
 package org.example.elastech.fundamentos.interfaces;
 
+import java.util.ArrayList;
+
 public class EntendendoInterfaces { /*
 1. Crie uma interface Animal com o método emitirSom().
    Crie a classe Cachorro que implementa ela e imprime "Au au!".
@@ -34,8 +36,45 @@ animais.add(new Cachorro());
    percorra com for-each chamando os dois métodos em cada um.
 */
     public static void main(String[] args) {
-        Cachorro caramelo = new Cachorro();
+        //Exercício 1
+        Cachorro cachorro = new Cachorro();
 
+        cachorro.emitirSom();
 
+        //Exercício 2
+        Animais caramelo = new Cachorro();
+        Animais mel = new Gato();
+
+        caramelo.emitirSom();
+        mel.emitirSom();
+
+        //Exercício 3
+        ArrayList<Animais> animais = new ArrayList<>();
+        animais.add(new Cachorro());
+        animais.add(new Gato());
+
+        for (Animais animal : animais){
+            animal.emitirSom();
+        }
+
+        //Exercício 4
+        ArrayList<Notificacao> mensagens = new ArrayList<>();
+        mensagens.add(new Email());
+        mensagens.add(new SMS());
+
+        for (Notificacao mensagem : mensagens){
+            mensagem.enviar("Sua compra foi aprovada!");
+        }
+
+        //Exercício 5
+        ArrayList<Veiculo> veiculos = new ArrayList<>();
+        veiculos.add(new Carro());
+        veiculos.add(new Moto());
+
+        for (Veiculo veiculo : veiculos){
+            veiculo.ligar();
+            veiculo.acelerar();
+
+        }
     }
 }
