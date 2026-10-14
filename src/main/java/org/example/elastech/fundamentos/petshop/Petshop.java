@@ -13,12 +13,23 @@ public class Petshop {
         System.out.println("Agora digite o peso dele:");
         double peso = scanner.nextDouble();
 
+        String porte;
+
+        if (peso < 10){
+            porte = "Pequeno";
+        } else if (peso < 25) {
+            porte = "Médio";
+        }else {
+            porte = "Grande";
+        }
+
         System.out.printf("""
                 === FICHA DO PET ===
                 Nome: %s
                 Espécie: %s
                 Peso: %.1f kg
+                Porte: %s
                 ====================
-                """, nome, especie, peso);
+                """, nome, especie, peso, porte);
     }
 }
