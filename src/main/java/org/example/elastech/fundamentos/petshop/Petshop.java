@@ -15,11 +15,12 @@ public class Petshop {
                     \n=== PETSHOP ===
                     1 - Cadastrar pet
                     2 - Listar pets
+                    3 - Buscar pet por nome
                     0 - Sair
+                    Escolha uma opção:
                     """);
             opcao = scanner.nextInt();
             scanner.nextLine();
-            System.out.println("Escolha: " + opcao);
 
             switch (opcao) {
                 case 1:
@@ -51,6 +52,21 @@ public class Petshop {
                         }
                     }
                     break;
+                case 3:
+                    boolean achou = false;
+                    System.out.println("Qual pet você procura?");
+                    String busca = scanner.nextLine();
+                    for (int i = 0; i < total; i++) {
+                        if (lista[i].nome.equalsIgnoreCase(busca)) {
+                            System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + " kg - Porte " + lista[i].porte);
+                            achou = true;
+                            break;
+                        }
+                    }
+                        if (!achou) {
+                            System.out.println("Pet não encontrado.");
+                        }
+                        break;
 
                 case 0:
                     System.out.println("Até logo!");
