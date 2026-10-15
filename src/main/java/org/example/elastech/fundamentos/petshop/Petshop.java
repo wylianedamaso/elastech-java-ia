@@ -15,15 +15,7 @@ public class Petshop {
         System.out.println("Agora digite o peso dele:");
         novoPet.peso = scanner.nextDouble();
 
-
-
-        if (novoPet.peso < 10){
-            novoPet.porte = "Pequeno";
-        } else if (novoPet.peso < 25) {
-            novoPet.porte = "Médio";
-        }else {
-            novoPet.porte = "Grande";
-        }
+        novoPet.porte = novoPet.definirPorte();
 
         System.out.printf("""
                 === FICHA DO PET ===
