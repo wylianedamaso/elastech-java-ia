@@ -8,6 +8,8 @@ public class Petshop {
 
         Pet novoPet = new Pet();
 
+        Pet[] lista = new Pet[5];
+
         System.out.println("Digite o nome do seu Pet:");
         novoPet.nome = scanner.nextLine();
         System.out.println("Digite agora a espécie dele:");
@@ -25,5 +27,8 @@ public class Petshop {
                 Porte: %s
                 ====================
                 """, novoPet.nome, novoPet.especie, novoPet.peso, novoPet.porte);
+
+        lista[0] = novoPet;
+        System.out.println("--- PETS CADASTRADOS ---\n" + lista[0].nome + " (" + lista[0].especie + ") - " + lista[0].peso + " kg - Porte " + lista[0].porte);
     }
 }
