@@ -6,21 +6,23 @@ public class Petshop {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        Pet novoPet = new Pet();
+
         System.out.println("Digite o nome do seu Pet:");
-        String nome = scanner.nextLine();
+        novoPet.nome = scanner.nextLine();
         System.out.println("Digite agora a espécie dele:");
-        String especie = scanner.nextLine();
+        novoPet.especie = scanner.nextLine();
         System.out.println("Agora digite o peso dele:");
-        double peso = scanner.nextDouble();
+        novoPet.peso = scanner.nextDouble();
 
-        String porte;
 
-        if (peso < 10){
-            porte = "Pequeno";
-        } else if (peso < 25) {
-            porte = "Médio";
+
+        if (novoPet.peso < 10){
+            novoPet.porte = "Pequeno";
+        } else if (novoPet.peso < 25) {
+            novoPet.porte = "Médio";
         }else {
-            porte = "Grande";
+            novoPet.porte = "Grande";
         }
 
         System.out.printf("""
@@ -30,6 +32,6 @@ public class Petshop {
                 Peso: %.1f kg
                 Porte: %s
                 ====================
-                """, nome, especie, peso, porte);
+                """, novoPet.nome, novoPet.especie, novoPet.peso, novoPet.porte);
     }
 }
