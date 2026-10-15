@@ -12,8 +12,9 @@ public class Petshop {
 
         while (opcao != 0) {
             System.out.println("""
-                    === PETSHOP ===
+                    \n=== PETSHOP ===
                     1 - Cadastrar pet
+                    2 - Listar pets
                     0 - Sair
                     """);
             opcao = scanner.nextInt();
@@ -40,13 +41,24 @@ public class Petshop {
                     System.out.println("Pet cadastrado! Agora são " + total + " pet(s).");
 
                     break;
+                case 2:
+                    if (total == 0){
+                        System.out.println("Nenhum pet cadastrado.");
+                    } else {
+                        System.out.println("--- PETS CADASTRADOS ---");
+                        for (int i = 0; i < total; i++) {
+                            System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + " kg - Porte " + lista[i].porte);
+                        }
+                    }
+                    break;
+
                 case 0:
                     System.out.println("Até logo!");
                     break;
 
                 default:
                     System.out.println("Opção inválida.");
-
+                    break;
             }
         }
 
