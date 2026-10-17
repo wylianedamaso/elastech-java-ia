@@ -157,8 +157,9 @@ public class Polimorfismo {
         professora.apresentar();
         professora.apresentar("Professora");
 
-        /* Conclusão: - apresentar() sobrescreve o método herdado de Pessoa. E apresentar(String cargo) é uma sobrecarga, pois recebe um parâmetro.
-         - Ao adicionar @Override em apresentar(String cargo), ocorre um erro de compilação, pois Pessoa não possui um método com essa assinatura.
+        /* Conclusão: - apresentar() sobrescreve o método herdado de Pessoa. E apresentar(String cargo) é uma sobrecarga,
+         * pois recebe um parâmetro. Ao adicionar @Override em apresentar(String cargo), ocorre um erro de compilação,
+         * pois Pessoa não possui um método com essa assinatura.
         */
 
     }
