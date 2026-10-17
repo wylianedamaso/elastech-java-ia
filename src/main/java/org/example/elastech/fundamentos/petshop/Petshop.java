@@ -5,9 +5,9 @@ import java.util.*;
 public class Petshop {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Pet[] lista = new Pet[5];
+
+        ArrayList<Pet> lista = new ArrayList<>();
         int opcao = -1;
-        int total = 0;
 
         ArrayDeque<String> filaBanho = new ArrayDeque<>();
 
@@ -35,10 +35,6 @@ public class Petshop {
 
                 switch (opcao) {
                     case 1:
-                        if (total >= lista.length){
-                            System.out.println("Cadastro cheio!");
-                            break;
-                        }
                         System.out.println("Digite o nome do seu Pet:");
                         String nomeDigitado = scanner.nextLine();
 
@@ -63,24 +59,23 @@ public class Petshop {
                         novoPet.peso = pesoDigitado;
                         novoPet.porte = novoPet.definirPorte();
 
-                        lista[total] = novoPet;
-                        total++;
+                        lista.add(novoPet);
 
-                        System.out.println("Pet cadastrado! Agora são " + total + " pet(s).");
+                        System.out.println("Pet cadastrado! Agora são " +lista.size() + " pet(s).");
 
                         break;
 
                     case 2:
-                        if (total == 0) {
+                        if (lista.isEmpty()) {
                             System.out.println("Nenhum pet cadastrado.");
                         } else {
                             System.out.println("--- PETS CADASTRADOS ---");
-                            for (int i = 0; i < total; i++) {
-                                System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + " kg - Porte " + lista[i].porte);
-                                lista[i].emitirSom();
+                            for (Pet pet : lista) {
+                                System.out.println(pet.nome + " (" + pet.especie + ") - " + pet.peso + " kg - Porte " + pet.porte);
+                                pet.emitirSom();
 
-                                if (lista[i] instanceof Cachorro cac) {
-                                    Cachorro cachorro = (Cachorro) lista[i];
+                                if (pet instanceof Cachorro) {
+                                    Cachorro cachorro = (Cachorro) pet;
                                     cachorro.buscarBolinha();
                                 }
                             }
@@ -91,9 +86,9 @@ public class Petshop {
                         boolean achou = false;
                         System.out.println("Qual pet você procura?");
                         String busca = scanner.nextLine();
-                        for (int i = 0; i < total; i++) {
-                            if (lista[i].nome.equalsIgnoreCase(busca)) {
-                                System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + " kg - Porte " + lista[i].porte);
+                        for (Pet pet : lista) {
+                            if (pet.nome.equalsIgnoreCase(busca)) {
+                                System.out.println(pet.nome + " (" + pet.especie + ") - " + pet.peso + " kg - Porte " + pet.porte);
                                 achou = true;
                                 break;
                             }
@@ -106,8 +101,8 @@ public class Petshop {
                     case 4:
                         HashSet<String> especies = new HashSet<>();
 
-                        for (int i = 0; i < total ; i++){
-                            especies.add(lista[i].especie.toLowerCase());
+                        for (Pet pet : lista){
+                            especies.add(pet.especie.toLowerCase());
                         }
 
                         System.out.println("--- ESPÉCIES CADASTRADAS ---");
@@ -153,20 +148,20 @@ public class Petshop {
                         break;
 
                     case 8:
-                        if (total == 0) {
+                        if (lista.isEmpty()) {
                             System.out.println("Nenhum pet cadastrado para testar.");
                         } else {
                             System.out.println("Qual o nome do pet que deseja ver a ficha?");
                             String buscaFicha = scanner.nextLine();
                             boolean encontrado = false;
 
-                            for (int i = 0; i < total; i++) {
-                                if (lista[i].nome.equalsIgnoreCase(buscaFicha)) {
+                            for (Pet pet : lista) {
+                                if (pet.nome.equalsIgnoreCase(buscaFicha)) {
                                     System.out.println("\n--- Testando método 1 (só nome) ---");
-                                    mostrarFicha(lista[i]);
+                                    mostrarFicha(pet);
 
                                     System.out.println("\n--- Testando método 2 (com título - Sobrecarga) ---");
-                                    mostrarFicha(lista[i], "=== FICHA DO PET ===");
+                                    mostrarFicha(pet, "=== FICHA DO PET ===");
 
                                     encontrado = true;
                                     break;
@@ -180,11 +175,11 @@ public class Petshop {
                         break;
 
                     case 9:
-                        System.out.println("Total de pets cadastrados no sistema: " + total);
+                        System.out.println("Total de pets cadastrados no sistema: " + lista.size());
                         break;
 
                     case 10:
-                        if (total == 0) {
+                        if (lista.isEmpty()) {
                             System.out.println("Nenhum pet cadastrado.");
                         } else {
                             System.out.println("Qual porte você deseja buscar (Pequeno, Médio, Grande)?");
@@ -192,10 +187,9 @@ public class Petshop {
                             boolean achouPorte = false;
 
                             System.out.println("--- PETS COM PORTE " + porteBusca.toUpperCase() + " ---");
-                            for (int i = 0; i < total;
-                             i++){
-                                if (lista[i].porte.equalsIgnoreCase(porteBusca)){
-                                    System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + "kg");
+                            for (Pet pet : lista){
+                                if (pet.porte.equalsIgnoreCase(porteBusca)){
+                                    System.out.println(pet.nome + " (" + pet.especie + ") - " + pet.peso + "kg");
                                     achouPorte = true;
                                 }
                             }
