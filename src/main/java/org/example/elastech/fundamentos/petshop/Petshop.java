@@ -32,16 +32,29 @@ public class Petshop {
 
                 switch (opcao) {
                     case 1:
-                        Pet novoPet = new Pet();
 
                         System.out.println("Digite o nome do seu Pet:");
-                        novoPet.nome = scanner.nextLine();
+                        String nomeDigitado = scanner.nextLine();
+
+                        Pet novoPet;
+
                         System.out.println("Digite agora a espécie dele:");
-                        novoPet.especie = scanner.nextLine();
+                        String especieDigitada = scanner.nextLine();
                         System.out.println("Agora digite o peso dele:");
-                        novoPet.peso = scanner.nextDouble();
+                        double pesoDigitado = scanner.nextDouble();
                         scanner.nextLine();
 
+                        if (especieDigitada.equalsIgnoreCase("Cachorro")){
+                            novoPet = new Cachorro();
+                        } else if (especieDigitada.equalsIgnoreCase("Gato")) {
+                            novoPet = new Gato();
+                        } else {
+                            novoPet = new Pet();
+                        }
+
+                        novoPet.nome = nomeDigitado;
+                        novoPet.especie = especieDigitada;
+                        novoPet.peso = pesoDigitado;
                         novoPet.porte = novoPet.definirPorte();
 
                         lista[total] = novoPet;
