@@ -1,5 +1,6 @@
 package org.example.elastech.fundamentos.petshop;
 
+import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,6 +18,7 @@ public class Petshop {
                     1 - Cadastrar pet
                     2 - Listar pets
                     3 - Buscar pet por nome
+                    4 - Mostrar espécies cadastradas
                     0 - Sair
                     Escolha uma opção:
                     """);
@@ -45,6 +47,7 @@ public class Petshop {
                         System.out.println("Pet cadastrado! Agora são " + total + " pet(s).");
 
                         break;
+
                     case 2:
                         if (total == 0) {
                             System.out.println("Nenhum pet cadastrado.");
@@ -55,6 +58,7 @@ public class Petshop {
                             }
                         }
                         break;
+
                     case 3:
                         boolean achou = false;
                         System.out.println("Qual pet você procura?");
@@ -69,6 +73,21 @@ public class Petshop {
                         if (!achou) {
                             System.out.println("Pet não encontrado.");
                         }
+                        break;
+
+                    case 4:
+                        HashSet<String> especies = new HashSet<>();
+
+                        for (int i = 0; i < total ; i++){
+                            especies.add(lista[i].especie);
+                        }
+
+                        System.out.println("--- ESPÉCIES CADASTRADAS ---");
+                        for (String especie : especies){
+                            System.out.println("- " + especie);
+                        }
+
+                        System.out.println("Total de espécies diferentes: " + especies.size());
                         break;
 
                     case 0:
