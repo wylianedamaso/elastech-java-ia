@@ -1,9 +1,6 @@
 package org.example.elastech.fundamentos.petshop;
 
-import java.util.ArrayDeque;
-import java.util.HashSet;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Petshop {
     public static void main(String[] args) {
@@ -24,6 +21,7 @@ public class Petshop {
                     4 - Mostrar espécies cadastradas
                     5 - Entrar na fila de banho
                     6 - Atender próximo da fila
+                    7 - Executar serviços no pet
                     0 - Sair
                     Escolha uma opção:
                     """);
@@ -111,6 +109,20 @@ public class Petshop {
                             System.out.println("Próximo da fila: " + proximo);
                             System.out.println("Atendendo " + proximo + "...");
                             System.out.println("Fila agora: " + filaBanho);
+                        }
+                        break;
+
+                    case 7:
+                        System.out.println("Nome do pet:");
+                        String nomeServico = scanner.nextLine();
+
+                        ArrayList<Servico> listaServico = new ArrayList<>();
+                        listaServico.add(new Banho());
+                        listaServico.add(new Tosa());
+                        listaServico.add(new Consulta());
+
+                        for (Servico servico : listaServico){
+                            servico.executar(nomeServico);
                         }
                         break;
 
