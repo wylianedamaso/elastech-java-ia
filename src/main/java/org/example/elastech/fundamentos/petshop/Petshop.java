@@ -71,6 +71,7 @@ public class Petshop {
                             System.out.println("--- PETS CADASTRADOS ---");
                             for (int i = 0; i < total; i++) {
                                 System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + " kg - Porte " + lista[i].porte);
+                                lista[i].emitirSom();
                             }
                         }
                         break;
