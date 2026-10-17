@@ -15,4 +15,8 @@ public class Pet {
             return "Grande";
         }
     }
+
+    void emitirSom(){
+        System.out.println(nome + "faz algum som.");
+    }
 }
