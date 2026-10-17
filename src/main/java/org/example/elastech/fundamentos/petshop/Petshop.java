@@ -5,7 +5,6 @@ import java.util.*;
 public class Petshop {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Pet[] lista = new Pet[5];
         int opcao = -1;
         int total = 0;
@@ -23,6 +22,9 @@ public class Petshop {
                     6 - Atender próximo da fila
                     7 - Executar serviços no pet
                     8 - Mostrar ficha do pet com sobrecarga
+                    9 - Ver total de pets cadastrados
+                    10 - Filtrar pets por porte
+                    11 - Atender todos da fila de banho
                     0 - Sair
                     Escolha uma opção:
                     """);
@@ -33,7 +35,10 @@ public class Petshop {
 
                 switch (opcao) {
                     case 1:
-
+                        if (total >= lista.length){
+                            System.out.println("Cadastro cheio!");
+                            break;
+                        }
                         System.out.println("Digite o nome do seu Pet:");
                         String nomeDigitado = scanner.nextLine();
 
@@ -73,6 +78,11 @@ public class Petshop {
                             for (int i = 0; i < total; i++) {
                                 System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + " kg - Porte " + lista[i].porte);
                                 lista[i].emitirSom();
+
+                                if (lista[i] instanceof Cachorro cac) {
+                                    Cachorro cachorro = (Cachorro) lista[i];
+                                    cachorro.buscarBolinha();
+                                }
                             }
                         }
                         break;
@@ -97,7 +107,7 @@ public class Petshop {
                         HashSet<String> especies = new HashSet<>();
 
                         for (int i = 0; i < total ; i++){
-                            especies.add(lista[i].especie);
+                            especies.add(lista[i].especie.toLowerCase());
                         }
 
                         System.out.println("--- ESPÉCIES CADASTRADAS ---");
@@ -135,6 +145,7 @@ public class Petshop {
                         listaServico.add(new Banho());
                         listaServico.add(new Tosa());
                         listaServico.add(new Consulta());
+                        listaServico.add(new Vacina());
 
                         for (Servico servico : listaServico){
                             servico.executar(nomeServico);
@@ -166,6 +177,42 @@ public class Petshop {
                             }
                         }
 
+                        break;
+
+                    case 9:
+                        System.out.println("Total de pets cadastrados no sistema: " + total);
+                        break;
+
+                    case 10:
+                        if (total == 0) {
+                            System.out.println("Nenhum pet cadastrado.");
+                        } else {
+                            System.out.println("Qual porte você deseja buscar (Pequeno, Médio, Grande)?");
+                            String porteBusca = scanner.nextLine();
+                            boolean achouPorte = false;
+
+                            System.out.println("--- PETS COM PORTE " + porteBusca.toUpperCase() + " ---");
+                            for (int i = 0; i < total;
+                             i++){
+                                if (lista[i].porte.equalsIgnoreCase(porteBusca)){
+                                    System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " + lista[i].peso + "kg");
+                                    achouPorte = true;
+                                }
+                            }
+                            if (!achouPorte) {
+                                System.out.println("Nenhum pet encontrado com esse porte.");
+                            }
+                        }
+                        break;
+
+                    case 11:
+                        if (filaBanho.isEmpty()) {
+                            System.out.println("A fila de banho já está vazia.");
+                        } else {
+                            System.out.println("Atendendo todos os pets da fila: " + filaBanho);
+                            filaBanho.clear();
+                            System.out.println("Todos os pets foram atendidos! Fila limpa.");
+                        }
                         break;
 
                     case 0:
