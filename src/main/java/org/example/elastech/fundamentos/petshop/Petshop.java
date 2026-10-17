@@ -1,5 +1,6 @@
 package org.example.elastech.fundamentos.petshop;
 
+import java.util.ArrayDeque;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -12,6 +13,8 @@ public class Petshop {
         int opcao = -1;
         int total = 0;
 
+        ArrayDeque<String> filaBanho = new ArrayDeque<>();
+
         while (opcao != 0) {
             System.out.println("""
                     \n=== PETSHOP ===
@@ -19,6 +22,8 @@ public class Petshop {
                     2 - Listar pets
                     3 - Buscar pet por nome
                     4 - Mostrar espécies cadastradas
+                    5 - Entrar na fila de banho
+                    6 - Atender próximo da fila
                     0 - Sair
                     Escolha uma opção:
                     """);
@@ -88,6 +93,25 @@ public class Petshop {
                         }
 
                         System.out.println("Total de espécies diferentes: " + especies.size());
+                        break;
+
+                    case 5:
+                        System.out.println("Nome do pet pra entrar na fila:");
+                        String petFila = scanner.nextLine();
+                        filaBanho.add(petFila);
+                        System.out.println(petFila + " entrou na fila.");
+                        System.out.println("Fila agora: " + filaBanho);
+                        break;
+
+                    case 6:
+                        if (filaBanho.isEmpty()){
+                            System.out.println("A fila de banho está vazia.");
+                        } else {
+                            String proximo = filaBanho.poll();
+                            System.out.println("Próximo da fila: " + proximo);
+                            System.out.println("Atendendo " + proximo + "...");
+                            System.out.println("Fila agora: " + filaBanho);
+                        }
                         break;
 
                     case 0:
