@@ -22,6 +22,7 @@ public class Petshop {
                     5 - Entrar na fila de banho
                     6 - Atender próximo da fila
                     7 - Executar serviços no pet
+                    8 - Mostrar ficha do pet com sobrecarga
                     0 - Sair
                     Escolha uma opção:
                     """);
@@ -140,6 +141,33 @@ public class Petshop {
                         }
                         break;
 
+                    case 8:
+                        if (total == 0) {
+                            System.out.println("Nenhum pet cadastrado para testar.");
+                        } else {
+                            System.out.println("Qual o nome do pet que deseja ver a ficha?");
+                            String buscaFicha = scanner.nextLine();
+                            boolean encontrado = false;
+
+                            for (int i = 0; i < total; i++) {
+                                if (lista[i].nome.equalsIgnoreCase(buscaFicha)) {
+                                    System.out.println("\n--- Testando método 1 (só nome) ---");
+                                    mostrarFicha(lista[i]);
+
+                                    System.out.println("\n--- Testando método 2 (com título - Sobrecarga) ---");
+                                    mostrarFicha(lista[i], "=== FICHA DO PET ===");
+
+                                    encontrado = true;
+                                    break;
+                                }
+                            }
+                            if (!encontrado) {
+                                System.out.println("Pet não encontrado.");
+                            }
+                        }
+
+                        break;
+
                     case 0:
                         System.out.println("Até logo!");
                         break;
@@ -156,5 +184,17 @@ public class Petshop {
         }
         scanner.close();
 
+    }
+
+    static void mostrarFicha(Pet pet){
+        System.out.println("Nome: " + pet.nome);
+    }
+
+    static void mostrarFicha(Pet pet, String titulo){
+        System.out.println(titulo);
+        System.out.println("Nome: " + pet.nome);
+        System.out.println("Espécie: " + pet.especie);
+        System.out.println("Peso: " + pet.peso + "kg");
+        System.out.println("Porte: " + pet.porte);
     }
 }
