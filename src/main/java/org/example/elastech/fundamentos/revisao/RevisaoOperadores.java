@@ -50,6 +50,6 @@ public class RevisaoOperadores {
 
         int num = 18;
 
-        System.out.println(num % 3 == 0 && num % 5 ==0);
+        System.out.println(num % 3 == 0 && num % 5 == 0);
     }
 }
