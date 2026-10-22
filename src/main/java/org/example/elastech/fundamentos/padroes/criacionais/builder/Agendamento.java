@@ -1,5 +1,8 @@
 package org.example.elastech.fundamentos.padroes.criacionais.builder;
 
+import lombok.Builder;
+
+@Builder
 public class Agendamento {
 
     private String nomePet;

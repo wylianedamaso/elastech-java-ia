@@ -3,15 +3,22 @@ package org.example.elastech.fundamentos.padroes.criacionais.builder;
 public class Main {
     public static void main(String[] args) {
 
-        Agendamento thor = new Agendamento("Thor", "banho", "14h", true, true, false, "alérgico a shampoo", 10.0);
+        Agendamento thor = Agendamento.builder().nomePet("Thor").servico("banho").horario("14h").perfume(true).laco(true).hidratacao(false).observacao("alérgico a shampoo").desconto(10.0).build();
 
-        Agendamento luna = new Agendamento("Luna", "tosa", "10h", false, false, false, "", 0.0);
+        Agendamento luna = Agendamento.builder().nomePet("Luna").servico("tosa").horario("10h").perfume(false).laco(false).hidratacao(false).observacao("").desconto(0.0).build();
 
-        Agendamento mel = new Agendamento("Mel", "banho", "16h", false, false, true, "", 0.0);
+
+        Agendamento mel = Agendamento.builder().nomePet("Mel").servico("banho").horario("16h").perfume(false).laco(false).hidratacao(true).observacao("").desconto(0.0).build();
+
 
         thor.mostrar();
         luna.mostrar();
         mel.mostrar();
-    }
+
+        Pizza pizza = new Pizza.Builder()
+                .borda("Catupiry")
+                .sabor("Mussarela")
+                .temQueijo(true)
+                .build();    }
 
 }
