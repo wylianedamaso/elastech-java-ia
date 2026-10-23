@@ -1,11 +1,20 @@
-package org.example.elastech.fundamentos.padroes.criacionais.interfaces;
+package org.example.elastech.fundamentos.padroes.criacionais.factory.interfaces;
+
+import org.example.elastech.fundamentos.padroes.criacionais.factory.BancoDeDadosFactory;
+
+import java.util.Scanner;
 
 public class Main {
-    /*Crie uma interface BancoDeDados que implementa chamarBanco() e getNumero(). Depois classes chamadas Oracle e MySql e Main. MySql e Oracle devem implementar a interface e ter um atributo int numero. chamarBanco() deve retornar uma mensagem de acordo com o banco conectado, e getNumero deve retornar o numero.
-    Exemplo: O Banco conectado é o MySql.
-    Na sua Main crie um método conectarBanco() para receber um dos bancos e dentro dele chamar o método chamarBanco() .
-     */
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Qual o banco que deseja utilizar? Digite: \n 1 - MySQL \n 2 - Oracle");
+        int opcao = scanner.nextInt();
+
+        BancoDeDados banco = BancoDeDadosFactory.criar(opcao);
+
+
         Oracle oracle = new Oracle();
         MySql mySql = new MySql();
 
