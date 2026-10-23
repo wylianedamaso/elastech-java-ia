@@ -1,4 +1,4 @@
-package org.example.elastech.fundamentos.padroes.criacionais.interfaces;
+package org.example.elastech.fundamentos.padroes.criacionais.factory.interfaces;
 
 public class Oracle implements BancoDeDados {
     private int numero = 5;

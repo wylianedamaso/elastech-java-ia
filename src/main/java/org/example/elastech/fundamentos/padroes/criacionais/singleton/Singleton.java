@@ -1,4 +1,4 @@
-package org.example.elastech.fundamentos.singleton;
+package org.example.elastech.fundamentos.padroes.criacionais.singleton;
 
 public class Singleton {
     public static void main(String[] args) {

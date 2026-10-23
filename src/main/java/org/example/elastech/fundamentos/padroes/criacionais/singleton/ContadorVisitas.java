@@ -1,4 +1,4 @@
-package org.example.elastech.fundamentos.singleton;
+package org.example.elastech.fundamentos.padroes.criacionais.singleton;
 
 public class ContadorVisitas {
     // 1. Atributo estático para guardar a única instância
