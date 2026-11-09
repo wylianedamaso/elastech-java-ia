@@ -1,5 +1,6 @@
 package org.example.elastech.fundamentos.collections;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,5 +49,18 @@ public class EntendendoHashMap {
 
         System.out.println(emails);
         System.out.println(emails.put("Ane", "novo@gmail.com"));
+
+        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<String> lista2 = new ArrayList<>();
+        HashMap<String, ArrayList<String>> email = new HashMap<>();
+        email.put("Rosa", lista);
+        lista.add("Senha do banco");
+        email.put("Rosalia", lista2);
+
+        System.out.println(email.containsKey("Jessica"));
+        System.out.println(email);
+
+
+
     }
 }
