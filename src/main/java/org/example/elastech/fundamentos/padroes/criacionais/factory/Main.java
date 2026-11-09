@@ -11,5 +11,11 @@ public class Main {
         animal.emitirSom();
         segundoAnimal.emitirSom();
 
+        Notificacao notificacao =
+                NotificacaoFactory.criar("email");
+
+        notificacao.enviar("Seu cadastro foi realizado!");
+
+
     }
 }
